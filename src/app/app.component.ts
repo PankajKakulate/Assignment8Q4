@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { getEventListeners } from 'node:events';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Assignment8Q4';
+  public dataTyped:string = "";
+  public dataLength:number = 0;
+  
+  public AngularEvent(Value : any){
+    this.dataTyped=""+Value;
+   
+    this.dataLength=this.dataTyped.length;
+
+  }
 }
